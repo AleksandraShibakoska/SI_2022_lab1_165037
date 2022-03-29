@@ -1,0 +1,147 @@
+$ git clone https://github.com/AleksandraShibakoska/SI_2022_lab1_165037.git      -kloniranje na dadeniot repozitorium
+cd SI_2022_lab1_165037
+touch shopping_list.txt                                                          -kreirame tekstualna datoteka
+nano shopping_list.txt                                                           -ja otvarame datotekata,gi dodavame produktite, zacuvuvame CTRL+O i izeguvame od tekstualniot dokument CTRL+X
+git add shopping_list.txt                                                        
+git commit -m "Add 5 items to the shopping list"                                 -commit na grankata master so poraka “Add 5 items to the shopping list”
+git push origin master                                                           -sinhronizacija so remote repozitoriumot
+
+$ git log
+commit 4abff4c1e1fa0cc34bc6d87db2a36df4cb599bb0 (HEAD -> master, origin/master, branch2, branch1)
+Author: AleksandraShibakoska <aleksandra.121@hotmail.com>
+Date:   Tue Mar 29 16:12:17 2022 +0200
+
+    Add quantities to the items
+
+commit c105e2abf90d57e1da18d72becc5ffc51164cff6
+Author: AleksandraShibakoska <aleksandra.121@hotmail.com>
+Date:   Tue Mar 29 16:04:06 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit c725bd5bdb3138bdac674a8d4622757a8e18891d
+Author: AleksandraShibakoska <63558400+AleksandraShibakoska@users.noreply.github.com>
+Date:   Tue Mar 29 16:00:32 2022 +0200
+
+    Update README.md
+
+commit c52a3b4d2fdeb74131c13c88df47887d1354fd89
+Author: AleksandraShibakoska <63558400+AleksandraShibakoska@users.noreply.github.com>
+Date:   Tue Mar 29 15:58:46 2022 +0200
+
+    Initial commit
+(END)
+
+
+git push origin branch1
+git push origin branch2
+git checkout branch1                               -preminuvanje na novata granka branch1
+nano shopping_list.txt                             -ja otvarame datotekata i ja menuvame kolicinata na pettata stavka
+git add shopping_list.txt
+git commit -m "Change quantity of item #5"         -commit so poraka “Change quantity of item #5”
+git push origin branch1                            -sinhronizacija so remote repozitoriumot
+git checkout master                                -preminuvanje na grankata master
+nano shopping_list.txt                             -ja otvorame datotekata i ja menuvame kolicinata na vtorata stavka
+git add shopping_list.txt
+git commit -m "Change quantity of item #2"         -commit so poraka "Change quantity of item #2"
+git push origin master                             -sinhronizacija so remote repozitoriumot
+git checkout branch2                               -preminuvanje na grankata branch2
+nano shopping_list.txt                             -ja otvorame datotekata i go menuvame imetto na stavkata 4
+git add shopping_list.txt
+git commit -m "Modify item #4"                     -commit so poraka "Modify item #4"
+git push origin branch2                             -sinhronizacija so remote repozitoriumot
+ 
+
+$ git log
+commit 801060b94f41eae016ec76637688f04b6bab4ea2 (HEAD -> branch2, origin/branch2)
+Author: AleksandraShibakoska <aleksandra.121@hotmail.com>
+Date:   Tue Mar 29 16:36:28 2022 +0200
+
+    Modify item #4
+
+commit 4abff4c1e1fa0cc34bc6d87db2a36df4cb599bb0
+Author: AleksandraShibakoska <aleksandra.121@hotmail.com>
+Date:   Tue Mar 29 16:12:17 2022 +0200
+
+    Add quantities to the items
+
+commit c105e2abf90d57e1da18d72becc5ffc51164cff6
+Author: AleksandraShibakoska <aleksandra.121@hotmail.com>
+Date:   Tue Mar 29 16:04:06 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit c725bd5bdb3138bdac674a8d4622757a8e18891d
+Author: AleksandraShibakoska <63558400+AleksandraShibakoska@users.noreply.github.com>
+Date:   Tue Mar 29 16:00:32 2022 +0200
+
+    Update README.md
+
+commit c52a3b4d2fdeb74131c13c88df47887d1354fd89
+Author: AleksandraShibakoska <63558400+AleksandraShibakoska@users.noreply.github.com>
+Date:   Tue Mar 29 15:58:46 2022 +0200
+
+    Initial commit
+(END)
+
+
+git add shopping_list.txt
+nano shopping_list.txt
+git commit --amend
+git push -f origin branch2
+
+$ git log
+commit 1fe0d933c783eca4fdf8766925a64c3ec5a9e8af (HEAD -> branch2, origin/branch2)
+Author: AleksandraShibakoska <aleksandra.121@hotmail.com>
+Date:   Tue Mar 29 16:36:28 2022 +0200
+
+    Modify item #4 and add item #6
+
+commit 4abff4c1e1fa0cc34bc6d87db2a36df4cb599bb0
+Author: AleksandraShibakoska <aleksandra.121@hotmail.com>
+Date:   Tue Mar 29 16:12:17 2022 +0200
+
+    Add quantities to the items
+
+commit c105e2abf90d57e1da18d72becc5ffc51164cff6
+Author: AleksandraShibakoska <aleksandra.121@hotmail.com>
+Date:   Tue Mar 29 16:04:06 2022 +0200
+
+    Add 5 items to the shopping list
+
+commit c725bd5bdb3138bdac674a8d4622757a8e18891d
+Author: AleksandraShibakoska <63558400+AleksandraShibakoska@users.noreply.github.com>
+Date:   Tue Mar 29 16:00:32 2022 +0200
+
+    Update README.md
+
+commit c52a3b4d2fdeb74131c13c88df47887d1354fd89
+Author: AleksandraShibakoska <63558400+AleksandraShibakoska@users.noreply.github.com>
+Date:   Tue Mar 29 15:58:46 2022 +0200
+
+    Initial commit
+(END)
+
+git checkout master                           -preminuvame na grankata master
+git merge branch1                             -spojuvanje na grankata branch1 so master bez nikakov konflikt
+git push origin master
+git merge branch2 (se javuva konflikt)
+nano shopping_list.txt
+git add shopping_list.txt
+git merge --continue (se javuva prozorec, pisuvam :wq pa enter)
+git push -u origin master
+touch 165037.txt
+nano 15037.txt
+git add 165037.txt
+git commit -m "Add docs"
+git push origin master
+
+
+
+
+
+
+
+
+
+
