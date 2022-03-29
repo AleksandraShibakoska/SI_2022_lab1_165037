@@ -1,5 +1,6 @@
 bread x 2
 milk  x 3
 sugar x 4
-water x 5
+sparkling water x 5
 oil   x 6
+salt  x 7
