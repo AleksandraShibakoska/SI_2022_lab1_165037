@@ -1,5 +1,5 @@
 bread x 2
-milk  x 3
+milk  x 7
 sugar x 4
 water x 5
 oil   x 6
