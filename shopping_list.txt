@@ -1,5 +1,11 @@
 bread x 2
 milk  x 7
 sugar x 4
+<<<<<<< HEAD
 water x 5
 oil   x 7
+=======
+sparkling water x 5
+oil   x 6
+salt  x 7
+>>>>>>> branch2
